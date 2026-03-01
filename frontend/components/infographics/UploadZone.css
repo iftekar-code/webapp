@@ -1,0 +1,121 @@
+.upload-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.upload-zone {
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    background: var(--card-bg);
+    transition: all 200ms ease;
+    min-height: 180px;
+}
+
+.upload-zone:hover,
+.upload-zone.active {
+    border-color: var(--primary-purple);
+    background: var(--extra-pale-purple);
+}
+
+[data-theme="dark"] .upload-zone:hover,
+[data-theme="dark"] .upload-zone.active {
+    background: rgba(123, 44, 191, 0.15);
+}
+
+.upload-icon {
+    color: var(--primary-purple);
+    margin-bottom: var(--space-sm);
+    opacity: 0.8;
+}
+
+.upload-text {
+    font-weight: var(--semibold);
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.upload-subtext {
+    font-size: var(--small);
+    color: var(--text-secondary);
+}
+
+.upload-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: var(--space-sm);
+    margin-top: var(--space-xs);
+}
+
+.upload-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.upload-thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+}
+
+.upload-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.upload-thumb-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+}
+
+.upload-remove {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: background 200ms;
+}
+
+.upload-remove:hover {
+    background: var(--error);
+}
+
+.upload-name {
+    font-size: var(--tiny);
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.upload-error {
+    color: var(--error);
+    font-size: var(--small);
+    text-align: center;
+}

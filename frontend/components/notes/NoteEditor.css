@@ -1,0 +1,106 @@
+.note-editor {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.note-editor-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.note-editor-field label {
+    font-size: var(--small);
+    font-weight: var(--semibold);
+    color: var(--text-primary);
+}
+
+.note-editor-field input,
+.note-editor-field textarea,
+.note-editor-field select {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    background: var(--input-bg);
+    color: var(--text-primary);
+    transition: all 200ms;
+    resize: vertical;
+}
+
+.note-editor-field input:focus,
+.note-editor-field textarea:focus,
+.note-editor-field select:focus {
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 3px rgba(123, 44, 191, 0.1);
+}
+
+.note-editor-field textarea {
+    min-height: 160px;
+    line-height: 1.6;
+}
+
+.note-editor-charcount {
+    font-size: var(--tiny);
+    color: var(--text-secondary);
+    text-align: right;
+}
+
+.note-editor-actions {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: flex-end;
+    margin-top: var(--space-sm);
+}
+
+.note-editor-cancel {
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--text-secondary);
+    font-weight: var(--semibold);
+    transition: all 200ms;
+    border: 1px solid var(--border-color);
+}
+
+.note-editor-cancel:hover {
+    background: var(--hover-bg);
+    color: var(--text-primary);
+}
+
+.note-editor-save {
+    padding: 10px 24px;
+    border-radius: var(--radius-md);
+    background: var(--primary-purple);
+    color: #FFFFFF;
+    font-weight: var(--semibold);
+    transition: all 200ms;
+}
+
+.note-editor-save:hover:not(:disabled) {
+    background: var(--secondary-purple);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.note-editor-save:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Side-by-side Subject + Chapter dropdowns */
+.note-editor-row {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.note-editor-row .note-editor-field {
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 480px) {
+    .note-editor-row {
+        flex-direction: column;
+    }
+}

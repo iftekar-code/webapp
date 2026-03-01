@@ -1,0 +1,75 @@
+.infographic-preview {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.infographic-preview-image-wrapper {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+}
+
+.infographic-preview-image {
+    width: 100%;
+    display: block;
+}
+
+.infographic-preview-actions {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
+.infographic-action-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    font-weight: var(--semibold);
+    font-size: var(--small);
+    transition: all 200ms;
+    flex: 1;
+    justify-content: center;
+    min-width: 120px;
+}
+
+.infographic-action-btn.primary {
+    background: var(--primary-purple);
+    color: #fff;
+}
+
+.infographic-action-btn.primary:hover {
+    background: var(--secondary-purple);
+    transform: translateY(-1px);
+}
+
+.infographic-action-btn.secondary {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.infographic-action-btn.secondary:hover {
+    background: var(--hover-bg);
+}
+
+.infographic-action-btn.save {
+    background: var(--extra-pale-purple);
+    color: var(--primary-purple);
+}
+
+[data-theme="dark"] .infographic-action-btn.save {
+    background: rgba(123, 44, 191, 0.15);
+}
+
+.infographic-action-btn.save:hover:not(:disabled) {
+    background: var(--pale-purple);
+}
+
+.infographic-action-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

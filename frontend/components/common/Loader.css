@@ -1,0 +1,46 @@
+.skeleton-card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.skeleton-title {
+    height: 22px;
+    width: 70%;
+}
+
+.skeleton-text {
+    height: 14px;
+    width: 100%;
+}
+
+.skeleton-short {
+    width: 60%;
+}
+
+.skeleton-badge {
+    height: 20px;
+    width: 80px;
+    border-radius: var(--radius-sm);
+}
+
+.skeleton-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+    .skeleton-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .skeleton-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
