@@ -35,7 +35,7 @@ export function useNotes() {
 
     const updateNote = async (id: string, updates: NoteUpdate) => {
         const updatedNote = await notesService.updateNote(id, updates);
-        setNotes(prev => prev.map(n => (n.id === id ? updatedNote : n)));
+        setNotes(prev => prev.map(n => (n.id === id ? { ...n, ...updatedNote } : n)));
         return updatedNote;
     };
 

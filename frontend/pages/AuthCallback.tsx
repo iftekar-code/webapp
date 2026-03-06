@@ -1,22 +1,13 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { supabase } from '../../backend/config/supabase';
 import { Spinner } from '../components/common/Loader';
 
 export default function AuthCallback() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const handleCallback = async () => {
-            const { error } = await supabase.auth.getSession();
-            if (error) {
-                console.error('Auth callback error:', error);
-                navigate('/', { replace: true });
-            } else {
-                navigate('/home', { replace: true });
-            }
-        };
-        handleCallback();
+        // Auth is handled via localStorage — just redirect to home
+        navigate('/home', { replace: true });
     }, [navigate]);
 
     return (

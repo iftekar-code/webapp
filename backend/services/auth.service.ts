@@ -1,39 +1,24 @@
-import { supabase } from '../config/supabase';
+// Auth service stub — app uses localStorage-based auth (see frontend/contexts/AuthContext.tsx)
+// This file is kept for API compatibility but is not actively used.
 
 export const authService = {
-    async signUp(email: string, password: string, fullName: string) {
-        const { data, error } = await supabase.auth.signUp({
-            email,
-            password,
-            options: {
-                data: { full_name: fullName },
-            },
-        });
-        if (error) throw error;
-        return data;
+    async signUp(_email: string, _password: string, _fullName: string) {
+        throw new Error('Auth is handled via localStorage. Use AuthContext.enterApp() instead.');
     },
 
-    async signIn(email: string, password: string) {
-        const { data, error } = await supabase.auth.signInWithPassword({
-            email,
-            password,
-        });
-        if (error) throw error;
-        return data;
+    async signIn(_email: string, _password: string) {
+        throw new Error('Auth is handled via localStorage. Use AuthContext.enterApp() instead.');
     },
 
     async signOut() {
-        const { error } = await supabase.auth.signOut();
-        if (error) throw error;
+        // No-op: handled by AuthContext
     },
 
     async getSession() {
-        const { data, error } = await supabase.auth.getSession();
-        if (error) throw error;
-        return data.session;
+        return null;
     },
 
-    onAuthStateChange(callback: (event: string, session: any) => void) {
-        return supabase.auth.onAuthStateChange(callback);
+    onAuthStateChange(_callback: (event: string, session: any) => void) {
+        return { data: { subscription: { unsubscribe: () => { } } } };
     },
 };
